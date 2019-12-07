@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CalculaJuros.Service.ViewModels
+﻿namespace CalculaJuros.Service.ViewModels
 {
     public class CalculaJurosViewModel
     {

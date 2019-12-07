@@ -9,4 +9,23 @@
     <PackageReference Include="RestSharp" Version="106.6.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CalculaJuros.Domain\CalculaJuros.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ResourceRequest.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ResourceRequest.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\ResourceRequest.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceRequest.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

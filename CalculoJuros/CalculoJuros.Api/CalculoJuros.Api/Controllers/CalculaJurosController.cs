@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CalculaJuros.Service.Requests;
+﻿using CalculaJuros.Domain.Command;
+using CalculaJuros.Domain.Interfaces;
+using CalculaJuros.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CalculoJuros.Api.Controllers
 {
@@ -11,14 +10,28 @@ namespace CalculoJuros.Api.Controllers
     [ApiController]
     public class CalculaJurosController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        private readonly IMediatorHandler _bus;
+        private readonly ICalcularJurosService _calcularJurosService;
+
+        public CalculaJurosController(IMediatorHandler bus,
+                                      ICalcularJurosService calcularJurosService)
         {
-            var calculador = new CalculaJurosService();
-            calculador.ConsumingApi();
-            
-            return new string[] { "value1", "value2" };
+            _bus = bus;
+            _calcularJurosService = calcularJurosService;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult<decimal>> CalcularJuros([FromQuery]decimal valorInicial,
+                                                               [FromQuery]int meses)
+
+        {
+
+            var calcularCommand = await _calcularJurosService.CalcularJurosServiceAsync(valorInicial, meses);
+
+            var task = _bus.SendCommand<CalculoJurosCommandCalcular, decimal>(calcularCommand);
+            return task.Result;
         }
     }
 }
