@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
-    <UserSecretsId>6c9b92ec-8373-44a9-af58-58ec89d6f41c</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -32,8 +30,8 @@
    </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TaxaJuros.Domain\TaxaJuros.Domain.csproj" />
-    <ProjectReference Include="..\..\TaxaJuros.Infra\TaxaJuros.Infra.csproj" />
+    <ProjectReference Include="..\TaxaJuros.Domain\TaxaJuros.Domain.csproj" />
+    <ProjectReference Include="..\TaxaJuros.Infra\TaxaJuros.Infra.csproj" />
   </ItemGroup>
 
 </Project>
