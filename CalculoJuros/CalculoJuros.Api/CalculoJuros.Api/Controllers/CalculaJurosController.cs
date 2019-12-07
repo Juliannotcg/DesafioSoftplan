@@ -28,10 +28,10 @@ namespace CalculoJuros.Api.Controllers
 
         {
 
-            var calcularCommand = await _calcularJurosService.CalcularJurosServiceAsync(valorInicial, meses);
+            var request = await _calcularJurosService.CalcularJurosServiceAsync(valorInicial, meses);
 
-            var task = _bus.SendCommand<CalculoJurosCommandCalcular, decimal>(calcularCommand);
-            return task.Result;
+            var task = await _bus.SendCommand<CalculoJurosCommandCalcular, decimal>(request);
+            return Ok(task);
         }
     }
 }

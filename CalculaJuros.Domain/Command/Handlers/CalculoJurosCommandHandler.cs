@@ -12,25 +12,17 @@ namespace CalculaJuros.Domain.Command
 
         private readonly IMapper _mapper;
 
-        public CalculoJurosCommandHandler(IMapper mapper) 
+        public CalculoJurosCommandHandler(IMapper mapper)
         {
             _mapper = mapper;
         }
 
-          public Task<decimal> Handle(CalculoJurosCommandCalcular request,
-                                    CancellationToken cancellationToken)
+        public Task<decimal> Handle(CalculoJurosCommandCalcular request, CancellationToken cancellationToken)
         {
-
-            if (!request.IsValid())
-            {
-                return Task.FromResult(default(decimal));
-            }
-
             var calculo = _mapper.Map<CalculoJuros>(request);
             var retorno = calculo.Calcular();
 
             return Task.FromResult(retorno);
         }
-
     }
 }

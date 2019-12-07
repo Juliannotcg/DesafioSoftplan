@@ -1,8 +1,9 @@
 ﻿using CalculaJuros.Domain.Command.CommandValidations;
+using MediatR;
 
 namespace CalculaJuros.Domain.Command
 {
-    public class CalculoJurosCommandCalcular : Command<decimal>
+    public class CalculoJurosCommandCalcular : ResultedCommand<decimal>
     {
         public decimal Taxa { get; set; }
         public decimal ValorInicial { get; set; }

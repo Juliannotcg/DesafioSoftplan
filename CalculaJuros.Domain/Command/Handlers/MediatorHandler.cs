@@ -28,7 +28,7 @@ namespace CalculaJuros.Domain.Command.Handlers
             return _mediator.Send(request, cancellationToken);
         }
 
-        public Task<TResult> SendCommand<T, TResult>(T command) where T : Command<TResult>
+        public Task<TResult> SendCommand<T, TResult>(T command) where T : ResultedCommand<TResult>
         {
             return _mediator.Send<TResult>(command);
         }

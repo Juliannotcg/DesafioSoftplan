@@ -5,12 +5,14 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using CalculaJuros.Domain.Command;
 using CalculaJuros.Domain.Command.Handlers;
 using CalculaJuros.Domain.Interfaces;
 using CalculaJuros.Infra.Repository;
 using CalculaJuros.Service.Interfaces;
 using CalculaJuros.Service.Requests;
 using CalculoJuros.Api.Configurations;
+using MediatR;
 using MediatR.Extensions.Autofac.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,12 +36,13 @@ namespace CalculoJuros.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ICalculaJurosRepository, CalculaJurosRepository > ();
             services.AddScoped<ICalcularJurosService, CalculaJurosService>();
             services.AddScoped<IMediatorHandler, MediatorHandler>();
+
+            services.AddScoped<IRequestHandler<CalculoJurosCommandCalcular, decimal>, CalculoJurosCommandHandler>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
