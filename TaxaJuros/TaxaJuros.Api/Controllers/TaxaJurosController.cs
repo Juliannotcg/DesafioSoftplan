@@ -6,7 +6,7 @@ using TaxaJuros.Domain.Interface;
 
 namespace TaxaJuros.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/TaxaJuros")]
     [ApiController]
     public class TaxaJurosController : ControllerBase
     {
