@@ -27,9 +27,7 @@ namespace CalculoJuros.Api.Controllers
                                                                [FromQuery]int meses)
 
         {
-
             var request = await _calcularJurosService.CalcularJurosServiceAsync(valorInicial, meses);
-
             var task = await _bus.SendCommand<CalculoJurosCommandCalcular, decimal>(request);
             return Ok(task);
         }

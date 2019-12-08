@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 
+
 namespace CalculoJuros.Api.AutoMapper
 {
-    public class AutoMapperConfiguration
+    public static class AutoMapperConfiguration
     {
         public static MapperConfiguration RegisterMappings()
         {

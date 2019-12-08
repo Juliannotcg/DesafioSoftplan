@@ -23,20 +23,12 @@ namespace CalculaJuros.Domain.Models
         {
             var aux = (decimal)Math.Pow(decimal.ToDouble(Taxa) + 1, Meses);
             _valorCalculado = ValorInicial * aux;
-            TruncateDecimal();
-            return _valorCalculado;
-        }
 
-        public void MudarCasasDecimais(int casasDecimais)
-        {
-            _casasDecimais = casasDecimais;
-        }
-
-        private void TruncateDecimal()
-        {
             decimal step = (decimal)Math.Pow(10, _casasDecimais);
             decimal tmp = Math.Truncate(step * _valorCalculado);
             _valorCalculado = tmp / step;
+
+            return _valorCalculado;
         }
     }
 }
