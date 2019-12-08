@@ -33,13 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CalculaJuros.Domain\CalculaJuros.Domain.csproj" />
-    <ProjectReference Include="..\..\..\CalculaJuros.Infra\CalculaJuros.Infra.csproj" />
-    <ProjectReference Include="..\..\..\CalculaJuros.Service\CalculaJuros.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="publish\" />
+    <ProjectReference Include="..\CalculaJuros.Domain\CalculaJuros.Domain.csproj" />
+    <ProjectReference Include="..\CalculaJuros.Infra\CalculaJuros.Infra.csproj" />
+    <ProjectReference Include="..\CalculaJuros.Service\CalculaJuros.Service.csproj" />
   </ItemGroup>
 
 </Project>

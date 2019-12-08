@@ -26,7 +26,7 @@ namespace CalculaJuros.Service.Requests
 
         public async Task<TaxaJurosViewModel> Request()
         {
-            var client = new RestClient("http://localhost:5001/");
+            var client = new RestClient("https://localhost:44357/");
             var request = new RestRequest("api/TaxaJuros", Method.GET);
             IRestResponse response = client.Execute(request);
             var content = response.Content;

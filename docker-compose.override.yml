@@ -2,18 +2,19 @@ version: '3.4'
 
 services:
   calculojuros.api:
-    container_name: calculo
     environment:
-      - ASPNETCORE_ENVIRONMENT=docker
-      - ASPNETCORE_URLS=HTTP://+:5002
+      - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5002:5002"
+      - "80"
 
   taxajuros.api:
-    container_name: taxa
     environment:
-      - ASPNETCORE_ENVIRONMENT=docker
-      - ASPNETCORE_URLS=HTTP://+:5001
+      - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5001:5001"
+      - "80"
+
+networks:
+  default:
+    external:
+      name: nat
 
