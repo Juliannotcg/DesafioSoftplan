@@ -44,5 +44,13 @@ namespace CalculaJuros.Test.Api
             var response = await _client.GetAsync($"api/ClaJuros?valorInicial={valorInicial}&meses={meses}");
             Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
         }
+
+        [DataTestMethod]
+        [DataRow(null, 5)]
+        public async Task Calcular_Taxa_De_Juros_Com_Erro_De_Parametro(double valorInicial, int meses)
+        {
+            var response = await _client.GetAsync($"api/ClaJuros?valorInicial={valorInicial}&meses={meses}");
+            Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
+        }
     }
 }
