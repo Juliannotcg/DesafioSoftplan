@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Infra", "Calcu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{5C82B339-2C61-4EFB-80CE-4BB669E9E78D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculaJuros.Test", "CalculaJuros.Test\CalculaJuros.Test.csproj", "{F7485A9A-80AC-4DE8-AA3B-A1A205C932A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculaJuros.Test", "CalculaJuros.Test\CalculaJuros.Test.csproj", "{F7485A9A-80AC-4DE8-AA3B-A1A205C932A5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{1A79612A-ECE5-4A81-9B3D-2B042BC87C8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{F7485A9A-80AC-4DE8-AA3B-A1A205C932A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7485A9A-80AC-4DE8-AA3B-A1A205C932A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7485A9A-80AC-4DE8-AA3B-A1A205C932A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A79612A-ECE5-4A81-9B3D-2B042BC87C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A79612A-ECE5-4A81-9B3D-2B042BC87C8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A79612A-ECE5-4A81-9B3D-2B042BC87C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A79612A-ECE5-4A81-9B3D-2B042BC87C8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
