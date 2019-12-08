@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>1a79612a-ece5-4a81-9b3d-2b042bc87c8a</ProjectGuid>
+    <ProjectGuid>e46c4290-5bb8-4969-9ffc-e6cf916946d7</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}/swagger/index.html</DockerServiceUrl>
     <DockerServiceName>calculojuros.api</DockerServiceName>

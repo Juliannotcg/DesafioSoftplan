@@ -2,27 +2,18 @@ version: '3.4'
 
 services:
   calculojuros.api:
+    container_name: calculo
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_URLS=HTTP://+:5002
     ports:
-      - "61217:80"
-      - "44392:443"
-    volumes:
-      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - "5002:5002"
+
   taxajuros.api:
+    container_name: taxa
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_ENVIRONMENT=docker
+      - ASPNETCORE_URLS=HTTP://+:5001
     ports:
-      - "62913:80"
-      - "44322:443"
-    volumes:
-      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
-networks:
-  default:
-    external:
-      name: nat
+      - "5001:5001"
 

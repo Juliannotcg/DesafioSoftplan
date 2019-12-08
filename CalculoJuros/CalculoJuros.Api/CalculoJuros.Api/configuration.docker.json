@@ -1,0 +1,82 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/TaxaJuros",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "taxa",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/TaxaJuros",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "taxa",
+      "SwaggerKey": "TaxaJuros"
+    },
+    {
+      "DownstreamPathTemplate": "/CalculaJuros",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculo",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/CalculaJuros",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "calculo-juros",
+      "SwaggerKey": "CalculaJuros"
+    },
+    {
+      "DownstreamPathTemplate": "/CalculaJuros?{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculo",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/CalculaJuros?{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "Key": "calculo-juros"
+    },
+    {
+      "DownstreamPathTemplate": "/showmethecode",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "calculo",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/showmethecode",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "TaxaJuros",
+      "Config": [
+        {
+          "Name": "Taxa - API",
+          "Version": "v1",
+          "Url": "http://taxa:5001/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "CalculaJuros",
+      "Config": [
+        {
+          "Name": "Calculo de Juros - API",
+          "Version": "v1",
+          "Url": "http://calculo:5002/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost"
+  }
+}
