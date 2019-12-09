@@ -66,7 +66,7 @@ namespace CalculoJuros.Api
             {
                 app.UseHsts();
             }
-
+            app.UseCors(option => option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseSwagger();
